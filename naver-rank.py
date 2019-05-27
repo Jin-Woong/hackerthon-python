@@ -7,10 +7,8 @@ from bs4 import BeautifulSoup
 
 url = 'https://www.naver.com'
 request = requests.get(url).text
-# print(type(request))
 soup = BeautifulSoup(request, 'html.parser')
 
-# result = soup.find_all('ul', {'data-list':'1to10'})
 result = soup.find('div', {'class': 'ah_roll_area PM_CL_realtimeKeyword_rolling'})
 index = 0
 for test in result.find_all('span', {'class': 'ah_k'}):
